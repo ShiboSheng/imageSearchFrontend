@@ -3,6 +3,7 @@ function search_photos(form){
     var q = formData.get('query');
     if(q == ""){
         console.log('no input');
+        alert("No input :(");
     }
     else{
         sdk.searchGet({'q': q}, {}, {})
@@ -10,6 +11,7 @@ function search_photos(form){
                 data = response.data;
                 var photos = data.results;
                 render_photos(photos);
+                alert("Search completed");
             });
     }
     return false;
@@ -38,6 +40,7 @@ function upload_photo(form){
         var data = reader.result.split(',')[1];
         sdk.uploadBucketFilenamePut(param, data, {}).then(response => {
             console.log("Uploaded!");
+            alert("Successfully uploaded your picture!");
         })
     }
     reader.readAsDataURL(photo);
