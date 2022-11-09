@@ -11,6 +11,7 @@ function search_photos(form){
                 data = response.data;
                 var photos = data.results;
                 render_photos(photos);
+                alert("Search completed. Click OK to view");
             });
     }
     return false;
