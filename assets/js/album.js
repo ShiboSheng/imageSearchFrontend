@@ -8,10 +8,10 @@ function search_photos(form){
     else{
         sdk.searchGet({'q': q}, {}, {})
             .then(response => {
-                alert("Search completed");
                 data = response.data;
                 var photos = data.results;
                 render_photos(photos);
+                alert("Search completed");
             });
     }
     return false;
